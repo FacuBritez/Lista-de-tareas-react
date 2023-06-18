@@ -1,16 +1,10 @@
 import React from 'react';
 import './App.sass';
-import Date from './components/Date';
-import Form from './components/Form';
+import Lista from './components/Lista';
 
 function App() {
   return (
-    <div className="lista">
-      {/*Fecha*/}
-      <Date />
-      {/*form*/}
-      <Form />
-    </div>
+    <Lista />
   );
 }
 
