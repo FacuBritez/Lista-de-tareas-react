@@ -2,8 +2,9 @@ import React from "react";
 import '../stylesheets/Button.sass'
 
 function Button(props: any) {
+
     return(
-        <button className={props.className}> {props.text}</button>
+        <button type={props.type} className={props.className} onClick={props.onClick}> {props.text}</button>
     );
 }
 
