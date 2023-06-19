@@ -2,6 +2,7 @@ import React from "react";
 import '../stylesheets/Form.sass'
 import Button from "./Button";
 import { useState } from "react";
+import Task from "./Task";
 
 function Form() {
 
@@ -10,7 +11,7 @@ function Form() {
 
     const addNewTask = () => {
         console.log('addNewTask')
-        
+
         //.trim() es para borrar los espacios en blanco al principio y final de un string
         if (newTask.trim() !== ''){
             setTasks([...tasks, newTask]);
@@ -36,6 +37,7 @@ function Form() {
                     id="input"
                     placeholder="Nueva tarea"
                     autoComplete="off"
+                    value={newTask}
                     onChange={e => setNewTask(e.target.value)}
                 //Añadir keyup enter
                 />
@@ -44,7 +46,12 @@ function Form() {
                 <Button type='button' text='trash' className='removeButton' onClick={() => trash()} />
             </form>
             <div id="tasksContainer">
-                
+                {
+                    tasks.map(
+                        (tarea) => 
+                        <Task text={tarea} />
+                    )
+                }
             </div>
         </>
     );
