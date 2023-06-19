@@ -9,7 +9,9 @@ function Form() {
     const [tasks, setTasks] = useState([] as string[]);
     const [newTask, setNewTask] = useState('');
 
-    const addNewTask = () => {
+    const addNewTask = (event: any) => {
+        event.preventDefault(
+        )
         console.log('addNewTask')
 
         //.trim() es para borrar los espacios en blanco al principio y final de un string
@@ -31,7 +33,7 @@ function Form() {
 
     return (
         <>
-            <form>
+            <form onSubmit={addNewTask}>
                 <input
                     type="text"
                     id="input"
@@ -41,7 +43,7 @@ function Form() {
                     onChange={e => setNewTask(e.target.value)}
                 //Añadir keyup enter
                 />
-                <Button type='button' text='+' className='addTaskButton' onClick={() => addNewTask()} />
+                <Button type='submit' text='+' className='addTaskButton' />
                 <Button type='button' text='Ordenar' className='orderButton' onClick={() => order()} />
                 <Button type='button' text='trash' className='removeButton' onClick={() => trash()} />
             </form>
