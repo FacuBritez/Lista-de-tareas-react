@@ -3,6 +3,17 @@ import '../stylesheets/Form.sass'
 import Button from "./Button";
 
 function Form() {
+
+    const addNewTask = () => {
+        console.log('addNewTask')
+    }
+    const order = () => {
+        console.log('order')
+    }
+    const trash = () => {
+        console.log('trash')
+    }
+ 
     return (
         <form>
             <input
@@ -12,9 +23,9 @@ function Form() {
                 autoComplete="off"
                 //Añadir keyup enter
             />
-            <Button text='+' className='addTaskButton'/>
-            <Button text='Ordenar' className='orderButton'/>
-            <Button text='trash' className='removeButton'/>
+            <Button type='button' text='+' className='addTaskButton' onClick={() => addNewTask()}/>
+            <Button type='button' text='Ordenar' className='orderButton' onClick={() => order()}/>
+            <Button type='button' text='trash' className='removeButton' onClick={() => trash()}/>
         </form>
     );
 }
