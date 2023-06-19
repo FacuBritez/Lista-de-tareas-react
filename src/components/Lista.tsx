@@ -1,13 +1,16 @@
 import React from "react";
-import '../stylesheets/Lista.sass'
-import Date from './Date';
+import '../stylesheets/Lista.sass';
+import DateBox from "./DateBox";
 import Form from './Form';
+import TasksContainer from "./TasksContainer";
+
 
 function Lista() {
     return (
         <div className="lista">
-            <Date />
+            <DateBox />
             <Form />
+            <TasksContainer />
         </div>
     )
 }
