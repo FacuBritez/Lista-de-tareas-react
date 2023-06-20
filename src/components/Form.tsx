@@ -50,8 +50,8 @@ function Form() {
             <div id="tasksContainer">
                 {
                     tasks.map(
-                        (tarea) => 
-                        <Task text={tarea} />
+                        (tarea, index) => 
+                        <Task key={index} text={tarea} />
                     )
                 }
             </div>
