@@ -16,7 +16,7 @@ function Form() {
 
         //.trim() es para borrar los espacios en blanco al principio y final de un string
         if (newTask.trim() !== ''){
-            setTasks([...tasks, newTask]);
+            setTasks([newTask, ...tasks]);
             setNewTask('');
         }
 
