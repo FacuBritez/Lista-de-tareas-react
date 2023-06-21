@@ -3,11 +3,6 @@ import '../stylesheets/Task.sass'
 
 function Task(props: any) {
 
-    const removeTask = (id: any) => {
-        console.log('removeTask')
-        /*Borrar elemento con id unico uuidv4*/
-    }
-
     const tachar = (id: any) => {
         /*
        const task = la tare;
@@ -17,9 +12,9 @@ function Task(props: any) {
 
     return (
         //Se crea la nueva tarea
-        <div className="task" onClick={() => tachar(props.id)}>
+        <div className="task" onClick={() => tachar(props.key)}>
             {props.text}
-            <i className="trash fa-regular fa-trash-can" onClick={() => removeTask(props.id)}>
+            <i className="trash fa-regular fa-trash-can" onClick={() => props.onClickTrash(props.key)}>
                 icon
             </i>
         </div>

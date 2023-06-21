@@ -31,6 +31,13 @@ function Form() {
         console.log('trash')
     }
 
+    const onClickTrash = (key: number) => {
+        console.log('removeTask')
+        console.log(tasks)
+        
+        setTasks(tasks.filter((task, index) => index != key))
+    }
+
     return (
         <>
             <form onSubmit={addNewTask}>
@@ -51,7 +58,7 @@ function Form() {
                 {
                     tasks.map(
                         (tarea, index) => 
-                        <Task key={index} text={tarea} />
+                        <Task key={index} text={tarea} onClickTrash={() => onClickTrash(index)} />
                     )
                 }
             </div>
